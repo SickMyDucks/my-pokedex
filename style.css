@@ -19,9 +19,14 @@ mark,audio,video {
     src: url('./fonts/ingame.ttf');
 }
 /* Screen display */
-.screen {
+
+.container {
     font-family: pokemonIngame;
     font-size: .6rem;
+}
+
+.screen {
+    position: relative;
     display: flex;
 }
 
@@ -30,6 +35,11 @@ mark,audio,video {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img {
+    width: 80%;
+    height: auto;
 }
 
 .infos {
@@ -50,7 +60,11 @@ mark,audio,video {
 
 .attack, .defense {
     width: 50%;
-    height: 15%
+    height: 10%
+}
+
+p{
+    width: 100%;
 }
 
 .moves {
@@ -68,7 +82,28 @@ li {
     height: 25px;
 }
 
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffe4c4;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input h2 {
+    margin-bottom: 10px;
+}
 /* * * * * * * * * */
 
 
@@ -236,7 +271,10 @@ ul {
 }
 
 .buttons div:first-child {
-    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
     width: 70px;
     border-radius: 10px 0 0 10px;
     background-color: #E6DCD6;
@@ -246,7 +284,10 @@ ul {
 }
 
 .buttons div:last-child {
-    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
     width: 70px;
     border-radius: 0 10px 10px 0;
     background-color: #E6DCD6;

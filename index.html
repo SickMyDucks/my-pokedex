@@ -41,11 +41,26 @@
             </div>
             <div class="main-screen">
                 <div class="screen">
+                    <div class="input">
+                        <form name="search">
+                            <h2>Search in Pokedex :</h2>
+                            <input type="text" name="pokemon-search" id="pokemon-search"><br>
+                            <button>Search!</button>
+                        </form>
+                    </div>
                     <div class="pokemon"></div>
                     <div class="infos">
                         <div class="name"></div>
+                        <p class="type"></p>
+                        <p>
+                            <strong>Stats:</strong>
+                        </p>
+                        <br>
                         <div class="attack"></div>
                         <div class="defense"></div>
+                        <p>
+                            <strong>Moves:</strong>
+                        </p>
                         <div class="moves">
                             <ul>
                                 <li id="move0"></li>
@@ -57,8 +72,8 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <div></div>
-                    <div></div>
+                    <div>Cancel</div>
+                    <div>Search</div>
                 </div>
             </div>
         </div>
