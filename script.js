@@ -16,8 +16,24 @@ window.onload = function() {
     }
 
     document.querySelector('form').onsubmit = function() {
-        console.log(this.querySelector('input').value);
-        chosenPokemon = this.querySelector('input').value;
+        searchQuery = this.querySelector('input').value;
+        searchQuery = capitalize(searchQuery);
+        console.log(searchQuery);
+        console.log(!isNaN(this.querySelector('input').value)); 
+
+        if (isNaN(this.querySelector('input').value)) {
+            for (var j in pokemon) {
+                if (pokemon[j].name == searchQuery) {
+                    console.log('trouvé');
+                    chosenPokemon = j;
+                } else {
+                    console.log('pas trouvé!');
+                }
+            }
+        } else {
+            chosenPokemon = this.querySelector('input').value;
+        }
+
         url = 'http://www.pokestadium.com/assets/img/sprites/official-art/large/'+pokemon[chosenPokemon].name.toLowerCase()+'.png';
         pkmnPicture.innerHTML = '<img src="'+url+'"/>';
         pkmnName.innerHTML = pokemon[chosenPokemon].name;
@@ -40,3 +56,7 @@ pokemon = $.ajax({
         return pokemon;
     }
 });
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

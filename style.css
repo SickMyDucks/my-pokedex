@@ -280,7 +280,8 @@ ul {
     background-color: #E6DCD6;
     border: solid 2px #000;
     box-sizing: content-box;
-    margin-right: 10px
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .buttons div:last-child {
@@ -293,7 +294,8 @@ ul {
     background-color: #E6DCD6;
     border: solid 2px #000;
     box-sizing: content-box;
-    margin-left: 10px
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .joystick {
