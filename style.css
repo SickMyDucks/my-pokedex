@@ -127,7 +127,7 @@ ul {
 .upper-screen {
     position: relative;
     width: 560px;
-    height: 372px;
+    height: 472px;
     border: solid 1px #000;
     transform: translateX(70px);
     background-color: #c84436;
@@ -135,8 +135,8 @@ ul {
 }
 
 .pokeball {
-    height: 310px;
-    width: 310px;
+    height: 270px;
+    width: 270px;
     background-color: #8A2E1B
 }
 
@@ -169,7 +169,7 @@ ul {
 
 .pokedex-base {
     width: 700px;
-    height: 400px;
+    height: 500px;
     background-color: #c84436;
     border-radius: 0 0 0 20px;
     border-width: 0 1px 1px 0;
@@ -299,19 +299,22 @@ ul {
 }
 
 .joystick {
-    height: 150px;
-    width: 150px;
+    height: 165px;
+    width: 165px;
     border: solid 1px #000;
     background-color: #cf4436;
     border-radius: 0 100px 100px 0;
-    transform: translate(378px, -150px);
+    transform: translate(360px, -108px);
     z-index: -1;
     position: relative
 }
 
 .inner-joystick {
-    height: 120px;
-    width: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    height: 95px;
+    width: 95px;
     background-color: #2B2826;
 }
 
@@ -319,7 +322,7 @@ table {
     border-collapse: collapse;
     top: 50%;
     right: -13%;
-    transform: translate(-50%, -50%)
+    transform: translate(-40%, -50%)
 }
 
 td {
@@ -338,7 +341,7 @@ tr:last-child td:nth-child(2) {
     position: absolute;
 }
 
-.pokeball, .middle-bar, .inner-pokeball, .green-circle, .inner-joystick {
+.pokeball, .middle-bar, .inner-pokeball, .green-circle {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
