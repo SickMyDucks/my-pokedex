@@ -12,89 +12,87 @@
 </head>
 
 <body>
-    <div class="upper-screen">
-        <div class="middle-bar">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="pokeball"></div>
-        <div class="inner-pokeball">
-            <div class="green-circle"></div>
-        </div>
-    </div>
-    <div class="pokedex-base">
-        <div class="upper-bar">
-            <div class="parts"></div>
-            <div class="parts"></div>
-            <div class="parts"></div>
-            <div class="parts"></div>
-            <div class="parts"></div>
-            <div class="parts"></div>
-        </div>
-        <div class="container">
-            <div class="left-sidebar">
-                <div class="green-lights">
+    <div class="pokedex">
+        <div class="main">
+            <div class="upper-screen">
+                <div class="outter-circle"></div>
+                <div class="middle-bar">
                     <div></div>
                     <div></div>
                 </div>
-                <div class="blue-circle"></div>
+                <div class="inner-circle">
+                    <div class="green-circle"></div>
+                </div>
             </div>
-            <div class="main-screen">
-                <div class="screen">
-                    <div class="input">
-                        <form name="search">
-                            <h1>Search in Pokedex :</h2>
-                            <h2></h2>
-                            <input type="text" name="pokemon-search" id="pokemon-search"><br>
-                            <button>Search!</button>
-                        </form>
+            <div class="bar">
+
+            </div>
+            <div class="lower-screen">
+                <div class="left-side">
+                    <div class="lights-container">
+                        <div class="green-light"></div>
+                        <div class="green-light"></div>
                     </div>
-                    <div class="pokemon"></div>
-                    <div class="infos">
-                        <div class="name"></div>
-                        <p class="type"></p>
-                        <p class="stats"></p>
-                        <br>
-                        <div class="attack"></div>
-                        <div class="defense"></div>
-                        <div class="moves">
-                            <ul>
-                                <li id="move0"></li>
-                                <li id="move1"></li>
-                                <li id="move2"></li>
-                                <li id="move3"></li>
-                            </ul>
+                    <div class="blue-light"></div>
+                </div>
+                <div class="right-side">
+                    <div class="screen-border">
+                        <div class="screen">
+                            <div class="input">
+                                <form name="search">
+                                    <h1>Search in Pokedex :</h1>
+                                    <h2></h2>
+                                    <input type="text" name="pokemon-search" id="pokemon-search"><br>
+                                </form>
+                            </div>
+                            <div class="pokemon"></div>
+                            <div class="infos">
+                                <div class="name"></div>
+                                <div class="type"></div>
+                                <div class="stats"></div>
+                                <br>
+                                <div class="attack"></div>
+                                <div class="defense"></div>
+                                <div class="moves">
+                                    <p>Moves:</p>
+                                    <ul>
+                                        <li id="move0"></li>
+                                        <li id="move1"></li>
+                                        <li id="move2"></li>
+                                        <li id="move3"></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="buttons">
-                    <div>Cancel</div>
-                    <div>Search</div>
+                    <div class="buttons">
+                        <div>Cancel</div>
+                        <div>Search</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="joystick">
-        <div class="inner-joystick">
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+        <div class="joystick">
+            <div class="inner-joystick">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
-
 </html>

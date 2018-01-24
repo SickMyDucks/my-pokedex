@@ -1,9 +1,18 @@
 window.onload = function() {
-    document.querySelector('.buttons div:last-child').onclick = function() {
-        document.querySelector('.input').style.display = 'flex';
-    }
     document.querySelector('.buttons div:first-child').onclick = function() {
         document.querySelector('.input').style.display = 'none';
+    }
+
+    document.querySelector('.buttons div:last-child').onclick = function() {
+        document.querySelector('.input').style.display = 'flex';
+        $('input').focus().select();
+    }
+
+    document.querySelector('tr:nth-child(2) td:first-child').onclick = function() {
+        refreshData(chosenPokemon, -1);
+    }
+    document.querySelector('tr:nth-child(2) td:last-child').onclick = function() {
+        refreshData(chosenPokemon, 1);
     }
 
     document.querySelector('form').onsubmit = function() {
@@ -27,29 +36,17 @@ window.onload = function() {
                 document.querySelector('h2').innerHTML = 'Pokémon number ' + this.querySelector('input').value + ' not found';
                 return false;
             }
-            
         }
 
         if (typeof chosenPokemon == 'undefined') {
             document.querySelector('h2').innerHTML = this.querySelector('input').value + ' not found';
         } else {
-            document.querySelector('h2').innerHTML = '';
-            url = 'http://www.pokestadium.com/sprites/xy/'+pokemon[chosenPokemon].name.toLowerCase()+'.gif';
-            document.querySelector('.pokemon').innerHTML = '<img src="'+url+'"/>';
-            document.querySelector('.name').innerHTML = pokemon[chosenPokemon].name + ' #'+chosenPokemon;
-            document.querySelector('.type').innerHTML = '<strong>Type: </strong>'+pokemon[chosenPokemon].type;
-            document.querySelector('.stats').innerHTML = '<strong>Stats:</strong>';
-            document.querySelector('.attack').innerHTML = 'Attack:' + pokemon[chosenPokemon].attack;
-            document.querySelector('.defense').innerHTML = 'Defense:' + pokemon[chosenPokemon].defense;
-            $('.moves').prepend("<strong>Moves:</strong>");
-            for (var i in pokemon[chosenPokemon].moves) {
-                document.querySelector('#move'+i).innerHTML = pokemon[chosenPokemon].moves[i];
-            }
-            document.querySelector('.input').style.display = 'none';
+            refreshData(chosenPokemon, 0);
         }
         return false;
     }
 };
+
 pokemon = $.ajax({
     method: 'get',
     dataType: 'json',
@@ -62,4 +59,29 @@ pokemon = $.ajax({
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function refreshData(selectedPokemon, number) {
+    if (parseInt(chosenPokemon) + number < 1) {
+        chosenPokemon = 1;
+    } else if (parseInt(chosenPokemon) + number > 151) {
+        chosenPokemon = 151;
+    } else {
+        chosenPokemon = parseInt(chosenPokemon) + number
+    }
+    var  selected = chosenPokemon;
+
+    document.querySelector('h2').innerHTML = '';
+    url = 'http://www.pokestadium.com/sprites/xy/'+pokemon[selected].name.toLowerCase()+'.gif';
+    document.querySelector('.pokemon').innerHTML = '<img src="'+url+'"/>';
+    document.querySelector('.name').innerHTML = pokemon[selected].name + ' #'+(selected);
+    document.querySelector('.type').innerHTML = 'Type: '+pokemon[selected].type;
+    document.querySelector('.stats').innerHTML = 'Stats:';
+    document.querySelector('.attack').innerHTML = 'Attack:' + pokemon[selected].attack;
+    document.querySelector('.defense').innerHTML = 'Defense:' + pokemon[selected].defense;
+    document.querySelector('.moves').style.display = 'block';
+    for (var i =0; i < 4; i++) {
+        document.querySelector('#move'+i).innerHTML =typeof pokemon[selected].moves[i] == 'undefined' ? '' : pokemon[selected].moves[i];
+    }
+    document.querySelector('.input').style.display = 'none';
 }
