@@ -38,7 +38,7 @@ mark,audio,video {
 }
 
 img {
-    width: 80%;
+    width: 50%;
     height: auto;
 }
 
@@ -101,7 +101,7 @@ form {
     align-items: center;
 }
 
-.input h2 {
+.input h1 {
     margin-bottom: 10px;
 }
 /* * * * * * * * * */
