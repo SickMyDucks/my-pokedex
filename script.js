@@ -36,7 +36,7 @@ window.onload = function() {
 
         url = 'http://www.pokestadium.com/assets/img/sprites/official-art/large/'+pokemon[chosenPokemon].name.toLowerCase()+'.png';
         pkmnPicture.innerHTML = '<img src="'+url+'"/>';
-        pkmnName.innerHTML = pokemon[chosenPokemon].name;
+        pkmnName.innerHTML = pokemon[chosenPokemon].name + ' #'+chosenPokemon;
         pkmnType.innerHTML = '<strong>Type: </strong>'+pokemon[chosenPokemon].type;
         pkmnAttack.innerHTML = 'Attack:' + pokemon[chosenPokemon].attack;
         pkmnDefense.innerHTML = 'Defense:' + pokemon[chosenPokemon].defense;
