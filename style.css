@@ -13,6 +13,22 @@ mark,audio,video {
     font-size: 100%;
     vertical-align: baseline
 }
+@keyframes closePokedex {
+    from {
+        transform: rotate3d(1,0,0,0);
+    }
+    to {
+        transform: rotate3d(1,0,0,180deg);
+    }
+  }
+@keyframes openPokedex {
+    from {
+        transform: rotate3d(1,0,0,180deg);
+    }
+    to {
+        transform: rotate3d(1,0,0,0);
+    }
+  }
 
 @font-face {
     font-family: pokemonIngame;
@@ -87,6 +103,19 @@ img {
     position: relative;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    transform-origin: 50% 104%;
+}
+
+.close-pokedex {
+    animation: closePokedex;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.open-pokedex {
+    animation: openPokedex;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .outter-circle {

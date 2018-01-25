@@ -1,4 +1,8 @@
 window.onload = function() {
+    if ($(window).height() > $(window).width()) {
+        $('.upper-screen').removeClass('open-pokedex');
+        $('.upper-screen').addClass('close-pokedex');
+    }
     document.querySelector('.buttons div:first-child').onclick = function() {
         document.querySelector('.input').style.display = 'none';
     }
@@ -84,4 +88,19 @@ function refreshData(selectedPokemon, number) {
         document.querySelector('#move'+i).innerHTML =typeof pokemon[selected].moves[i] == 'undefined' ? '' : pokemon[selected].moves[i];
     }
     document.querySelector('.input').style.display = 'none';
+}
+
+window.onresize = function() {
+    if ($(window).height() < 600) {
+        if ($('.upper-screen').hasClass('open-pokedex')) {
+            $('.upper-screen').removeClass('open-pokedex');
+        }
+        $('.upper-screen').addClass('close-pokedex');
+        console.log('yo');
+    } else {
+        if ($('.upper-screen').hasClass('close-pokedex')) {
+            $('.upper-screen').removeClass('close-pokedex');
+            $('.upper-screen').addClass('open-pokedex');
+        }
+    }
 }
