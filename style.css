@@ -13,22 +13,6 @@ mark,audio,video {
     font-size: 100%;
     vertical-align: baseline
 }
-@keyframes closePokedex {
-    from {
-        transform: rotate3d(1,0,0,0);
-    }
-    to {
-        transform: rotate3d(1,0,0,180deg);
-    }
-  }
-@keyframes openPokedex {
-    from {
-        transform: rotate3d(1,0,0,180deg);
-    }
-    to {
-        transform: rotate3d(1,0,0,0);
-    }
-  }
 
 @font-face {
     font-family: pokemonIngame;
@@ -79,6 +63,10 @@ img {
     height: 600px;
 }
 
+.rotate {
+    transform: rotate(-90deg);
+}
+
 /* * * * * * * * * * * * * * * * * *
  *        Main part of Pokedex     *
  * * * * * * * * * * * * * * * * * */
@@ -107,10 +95,28 @@ img {
     transform-origin: 50% 104%;
 }
 
+@keyframes closePokedex {
+    from {
+        transform: rotate3d(1,0,0,0);
+    }
+    to {
+        transform: rotate3d(1,0,0,180deg);
+    }
+}
+@keyframes openPokedex {
+    from {
+        transform: rotate3d(1,0,0,180deg);
+    }
+    to {
+        transform: rotate3d(1,0,0,0);
+    }
+}
+
 .close-pokedex {
     animation: closePokedex;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    z-index: 2;
 }
 .open-pokedex {
     animation: openPokedex;
@@ -248,6 +254,7 @@ img {
     justify-content: space-evenly;
     align-items: center;
     font-size: .6rem;
+    z-index: 1;
 }
 
 .screen-border {
@@ -396,6 +403,7 @@ p{
     border-radius: 0 100px 100px 0;
     display: flex;
     align-items: center;
+    transform: translate(-100%);
 }
 
 .inner-joystick {
@@ -406,6 +414,15 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.open-joystick {
+    transition-duration: 1s;
+    transform: translate(0%);
+}
+.close-joystick {
+    transition-duration: 1s;
+    transform: translate(-100%);
 }
 
 table {
