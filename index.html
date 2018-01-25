@@ -13,6 +13,24 @@
 </head>
 
 <body>
+    <div class="sidebar">
+        <h1>Tips:</h1>
+        <div class="tips">
+            <p>Resize vertically the window to close the Pokedex</p>
+            <p>
+                After searching for a pokemon, use
+                <i class="fa fa-caret-left" aria-hidden="true"></i> and
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+                to go to previous/next Pokemon
+            </p>
+            <p>
+                Find Pokemons in the search tab by their english name or their number (25for Pikachu, not 025)
+            </p>
+            <p>
+                Only the first generation is available (Number 1 to 151)
+            </p>
+        </div>
+    </div>
     <div class="pokedex">
         <div class="main">
             <div class="upper-screen open-pokedex">
@@ -48,7 +66,8 @@
                                 <form name="search">
                                     <h1>Search in Pokedex :</h1>
                                     <h2></h2>
-                                    <input type="text" name="pokemon-search" id="pokemon-search"><br>
+                                    <input type="text" name="pokemon-search" id="pokemon-search">
+                                    <br>
                                     <button type="submit">Search !</button>
                                 </form>
                             </div>
@@ -88,9 +107,13 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><i class="fa fa-caret-left" aria-hidden="true"></i></td>
+                        <td>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </td>
                         <td></td>
-                        <td><i class="fa fa-caret-right" aria-hidden="true"></i></td>
+                        <td>
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -102,4 +125,5 @@
         </div>
     </div>
 </body>
+
 </html>
