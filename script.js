@@ -1,6 +1,5 @@
 window.onload = function() {
     if ($(window).height() > $(window).width()) {
-        $('.pokedex').addClass('rotate');
         $('.upper-screen').removeClass('open-pokedex');
         $('.upper-screen').addClass('close-pokedex');
         $('.joystick').addClass('close-joystick');

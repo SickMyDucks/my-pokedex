@@ -67,7 +67,7 @@ img {
     left: 0;
     bottom: 0;
     background-color: #E08283;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -88,11 +88,8 @@ img {
     position: relative;
     flex-direction: row;
     width: 800px;
-    height: 600px;
-}
-
-.rotate {
-    transform: rotate(-90deg);
+    height: 375px;
+    transform: rotate(-90deg) translateY(-25%);
 }
 
 /* * * * * * * * * * * * * * * * * *
@@ -154,14 +151,14 @@ img {
 }
 
 .outter-circle {
-    width: 48%;
-    height: 90%;
+    width: 61%;
+    height: 85%;
     border-radius: 100%;
     background-color: #8A2E1B;
 }
 
 .middle-bar {
-    width: 51%;
+    width: 61%;
     height: 9%;
     display: flex;
     justify-content: space-between;
@@ -171,18 +168,18 @@ img {
 }
 
 .middle-bar div {
-    background-color: #DB261C;
+    background-color: #c52219;
     height: 100%;
     width: 30%;
 }
 
 .inner-circle {
-    height: 45%;
+    height: 36%;
     width: 25%;
     position: absolute;
     border-radius: 100%;
     box-sizing: content-box;
-    border: solid 25px #DB261C;
+    border: solid 19px #c52219;
     background-color: #8A2E1B;
 }
 
@@ -490,3 +487,37 @@ tr:last-child td:nth-child(2) {
 /* * * * * * * * * * * * * * * * * *
  *    End outter part of Pokedex   *
  * * * * * * * * * * * * * * * * * */
+
+ @media screen and (min-width: 800px) {
+    .pokedex {
+        transform: rotate(0deg);
+        height: 600px;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .outter-circle {
+        width: 48%;
+        height: 90%;
+    }
+
+    .middle-bar div {
+        background-color: #DB261C;
+        height: 100%;
+        width: 30%;
+    }
+
+    .middle-bar {
+        width: 48%;
+        height: 9%;
+    }
+
+    .inner-circle {
+        height: 45%;
+        width: 25%;
+        border: solid 25px #DB261C;
+        background-color: #DB261C;
+    }
+}
