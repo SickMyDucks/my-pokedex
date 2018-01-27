@@ -1,17 +1,20 @@
 window.onload = function() {
-    if ($(window).height() > $(window).width()) {
-        $('.upper-screen').removeClass('open-pokedex');
-        $('.upper-screen').addClass('close-pokedex');
-        $('.joystick').addClass('close-joystick');
+    body = document.querySelector('body');
+    upperScreen = document.querySelector('.upper-screen');
+    joystick = document.querySelector('.joystick');
+    if (body.getBoundingClientRect().height > body.getBoundingClientRect().width) {
+        upperScreen.classList.remove('open-pokedex');
+        upperScreen.classList.add('close-pokedex');
+        document.querySelector('.joystick').classList.add('close-joystick');
     }
     document.querySelector('.buttons div:first-child').onclick = function() {
         document.querySelector('.input').style.display = 'none';
     }
-    $('.joystick').addClass('open-joystick');
+    joystick.classList.add('open-joystick');
 
     document.querySelector('.buttons div:last-child').onclick = function() {
         document.querySelector('.input').style.display = 'flex';
-        $('input').focus().select();
+        document.querySelector('input').focus().select();
     }
 
     document.querySelector('tr:nth-child(2) td:first-child').onclick = function() {
@@ -93,22 +96,21 @@ function refreshData(selectedPokemon, number) {
 }
 
 window.onresize = function() {
-    if ($(window).height() < 600) {
-        if ($('.upper-screen').hasClass('open-pokedex') || $('.joystick').hasClass('close-joystick')) {
-            $('.upper-screen').removeClass('open-pokedex');
-            $('.joystick').removeClass('open-joystick');
+    if (body.getBoundingClientRect().height < 600) {
+        if (upperScreen.classList.contains('open-pokedex') || joystick.classList.contains('close-joystick')) {
+            upperScreen.classList.remove('open-pokedex');
+            joystick.classList.remove('open-joystick');
         }
-        $('.pokedex').css({'transform': 'translateY(-20%)'});
-        $('.upper-screen').addClass('close-pokedex');
-        $('.joystick').addClass('close-joystick');
-        console.log('yo');
+        document.querySelector('.pokedex').style.transform = 'translateY(-20%)';
+        upperScreen.classList.add('close-pokedex');
+        joystick.classList.add('close-joystick');
     } else {
-        if ($('.upper-screen').hasClass('close-pokedex') || $('.joystick').hasClass('close-joystick')) {
-            $('.upper-screen').removeClass('close-pokedex');
-            $('.upper-screen').addClass('open-pokedex');
-            $('.joystick').removeClass('close-joystick');
-            $('.joystick').addClass('open-joystick');
-            $('.pokedex').css({'transform': 'translateY(0%)'});
+        if (upperScreen.classList.contains('close-pokedex') || joystick.classList.contains('close-joystick')) {
+            upperScreen.classList.remove('close-pokedex');
+            upperScreen.classList.add('open-pokedex');
+            joystick.classList.remove('close-joystick');
+            joystick.classList.add('open-joystick');
+            document.querySelector('.pokedex').style.transform = 'translateY(0%)';
         }
     }
 }
