@@ -16,7 +16,7 @@ The joystick will also slide in/out when the pokedex opens or closes itself.
 Pokedex will be unavailable on phone. As soon as the page loads, the pokedex will close itself, an rotate to -90°. 
 
 <p align="center">
-  <img align="middle" src="https://i.neilrichter.com/4ovs0.gif" width="50%">
+  <img align="middle" src="https://i.neilrichter.com/xobdh.gif" width="50%">
 </p>
 
 ## Searching a Pokemon
