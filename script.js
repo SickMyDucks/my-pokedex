@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     body = document.querySelector('body');
     upperScreen = document.querySelector('.upper-screen');
     joystick = document.querySelector('.joystick');
@@ -7,29 +7,29 @@ window.onload = function() {
         upperScreen.classList.add('close-pokedex');
         document.querySelector('.joystick').classList.add('close-joystick');
     }
-    document.querySelector('.buttons div:first-child').onclick = function() {
+    document.querySelector('.buttons div:first-child').onclick = function () {
         document.querySelector('.input').style.display = 'none';
     }
     joystick.classList.add('open-joystick');
 
-    document.querySelector('.buttons div:last-child').onclick = function() {
+    document.querySelector('.buttons div:last-child').onclick = function () {
         document.querySelector('.input').style.display = 'flex';
-        document.querySelector('input').focus().select();
+        document.querySelector('input').select();
     }
 
-    document.querySelector('tr:nth-child(2) td:first-child').onclick = function() {
+    document.querySelector('tr:nth-child(2) td:first-child').onclick = function () {
         refreshData(chosenPokemon, -1);
     }
-    document.querySelector('tr:nth-child(2) td:last-child').onclick = function() {
+    document.querySelector('tr:nth-child(2) td:last-child').onclick = function () {
         refreshData(chosenPokemon, 1);
     }
 
-    document.querySelector('form').onsubmit = function() {
+    document.querySelector('form').onsubmit = function () {
         if (typeof chosenPokemon != 'undefined') {
             delete chosenPokemon;
         }
         searchQuery = this.querySelector('input').value;
-        searchQuery = capitalize(searchQuery); 
+        searchQuery = capitalize(searchQuery);
 
         if (isNaN(this.querySelector('input').value)) {
             for (var j in pokemon) {
@@ -60,7 +60,7 @@ pokemon = $.ajax({
     method: 'get',
     dataType: 'json',
     url: './pokemon.json',
-    success: function(data) {
+    success: function (data) {
         pokemon = data;
         return pokemon;
     }
@@ -78,26 +78,26 @@ function refreshData(selectedPokemon, number) {
     } else {
         chosenPokemon = parseInt(chosenPokemon) + number
     }
-    var  selected = chosenPokemon;
+    var selected = chosenPokemon;
 
     document.querySelector('h2').innerHTML = '';
-    url = 'http://www.pokestadium.com/sprites/xy/'+pokemon[selected].name.toLowerCase()+'.gif';
-    document.querySelector('.pokemon').innerHTML = '<img src="'+url+'"/>';
-    document.querySelector('.name').innerHTML = pokemon[selected].name + ' #'+(selected);
-    document.querySelector('.type').innerHTML = 'Type: '+pokemon[selected].type;
+    url = 'http://www.pokestadium.com/sprites/xy/' + pokemon[selected].name.toLowerCase() + '.gif';
+    document.querySelector('.pokemon').innerHTML = '<img src="' + url + '"/>';
+    document.querySelector('.name').innerHTML = pokemon[selected].name + ' #' + (selected);
+    document.querySelector('.type').innerHTML = 'Type: ' + pokemon[selected].type;
     document.querySelector('.stats').innerHTML = 'Stats:';
     document.querySelector('.attack').innerHTML = 'Attack:' + pokemon[selected].attack;
     document.querySelector('.defense').innerHTML = 'Defense:' + pokemon[selected].defense;
     document.querySelector('.moves').style.display = 'block';
-    for (var i =0; i < 4; i++) {
-        document.querySelector('#move'+i).innerHTML =typeof pokemon[selected].moves[i] == 'undefined' ? '' : pokemon[selected].moves[i];
+    for (var i = 0; i < 4; i++) {
+        document.querySelector('#move' + i).innerHTML = typeof pokemon[selected].moves[i] == 'undefined' ? '' : pokemon[selected].moves[i];
     }
     document.querySelector('.input').style.display = 'none';
 }
 
-window.onresize = function() {
-    if (body.getBoundingClientRect().height < 600) {
-        if (upperScreen.classList.contains('open-pokedex') || joystick.classList.contains('close-joystick')) {
+window.onresize = function () {
+    if (body.getBoundingClientRect().height < 600) {
+        if (upperScreen.classList.contains('open-pokedex') || joystick.classList.contains('close-joystick')) {
             upperScreen.classList.remove('open-pokedex');
             joystick.classList.remove('open-joystick');
         }
