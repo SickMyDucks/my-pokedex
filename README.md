@@ -29,7 +29,7 @@ as Farfetch'd, Nidoran F & M, Mr.Mime...
 
 ## Navigation
 
-It is possible to go to the previous thanks to the arrow on the joystick. You can go from 1 to 151.
+It is possible to go to the previous or next Pokemon thanks to the arrow on the joystick. You can go from 1 to 151.
 
 <p align="center">
   <img align="middle" src="https://i.neilrichter.com/urgqo.gif" width="50%">
