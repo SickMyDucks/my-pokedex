@@ -35,7 +35,6 @@ body {
 
 .right-part {
     width: 85vw;
-    height: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
